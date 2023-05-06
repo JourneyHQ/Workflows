@@ -42,7 +42,6 @@ on:
       gh_registry_token:
         description: GitHub PAT that have access to registry repository.
         required: true
-      
 
 jobs:
   Publish:
