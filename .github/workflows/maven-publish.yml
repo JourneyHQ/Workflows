@@ -1,4 +1,4 @@
-name: 🗃️ Publish to Registry
+name: 🗃️ Publish to Maven Registry
 
 on:
   workflow_call:
