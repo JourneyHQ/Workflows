@@ -39,7 +39,7 @@ on:
       discord_webhook:
         description: Discord webhook url to send notification
         required: true
-      github_token:
+      gh_registry_token:
         description: GitHub PAT that have access to registry repository.
         required: true
       
@@ -82,7 +82,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: JourneyHQ/MavenRegistry
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.gh_pages_token }}
           path: registry
       - name: ⌛ Restore caches
         uses: actions/cache@v3
@@ -94,8 +94,6 @@ jobs:
       - name: 🗃️ Publish to JourneyHQ/MavenRegistry
         env:
           project_version: ${{ steps.version.outputs.new_version }}
-          project_user: ${{ secrets.user }}
-          project_token: ${{ secrets.token }}
         run: |
           mv ./registry/ ./project/artifacts/
           cd ./project
