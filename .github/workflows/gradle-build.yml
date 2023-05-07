@@ -39,7 +39,7 @@ jobs:
         uses: sarisia/actions-status-discord@v1
         with:
           nodetail: true
-          webhook: ${{ secrets.discord_webhook }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "${{ inputs.emoji }} ${{ github.repository }} v${{ steps.version.outputs.new_version }} workflow run started"
           description: "View run: [${{ github.workflow }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
           color: 0xeaa6e9
@@ -75,6 +75,6 @@ jobs:
         env:
           project_version: ${{ steps.version.outputs.new_version }}
         with:
-          webhook: ${{ secrets.discord_webhook }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "${{ inputs.emoji }} ${{ github.repository }} v${{ env.project_version }} workflow run complete"
           color: 0xeaa6e9
