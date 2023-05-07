@@ -93,6 +93,9 @@ jobs:
       - name: 🗃️ Publish to JourneyHQ/MavenRegistry
         env:
           project_version: ${{ steps.version.outputs.new_version }}
+          platform: actions
+          project_user: ${{ github.repository_owner }}
+          project_token: ${{ secrets.GH_REGISTRY_TOKEN }}
         run: |
           mv ./registry/ ./project/artifacts/
           cd ./project
