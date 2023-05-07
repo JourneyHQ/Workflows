@@ -20,7 +20,7 @@ on:
         type: string
         default: "publish"
     secrets:
-      discord_webhook:
+      DISCORD_WEBHOOK:
         description: Discord webhook url to send notification
         required: true
 
