@@ -19,6 +19,10 @@ on:
         description: Gradle command to execute.
         type: string
         default: "publish"
+    secrets:
+      discord_webhook:
+        description: Discord webhook url to send notification
+        required: true
 
 jobs:
   Build:
