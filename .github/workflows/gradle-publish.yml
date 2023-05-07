@@ -36,10 +36,10 @@ on:
         type: string
         required: true
     secrets:
-      discord_webhook:
+      DISCORD_WEBHOOK:
         description: Discord webhook url to send notification
         required: true
-      gh_registry_token:
+      GH_REGISTRY_TOKEN:
         description: GitHub PAT that have access to registry repository.
         required: true
 
